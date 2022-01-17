@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace Task1.ConfigurationProvider;
+﻿namespace Task1.ConfigurationProvider;
 
 public interface IConfigurationProvider
 {
