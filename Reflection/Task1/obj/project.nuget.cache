@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Vvn3O47Ce1fRy2kzEUpdwZhkgNmliqdHN8vdOzEEgtgFvi3yRID2ATECCZFIjOghxYCY4DWyrRz6di4Be9xuRA==",
+  "dgSpecHash": "FDXXSrc3NB8h8tTxd2B741CT9nHiMsOFj0YKxymYzeWV7GNE6AbxdRcbtnhb2PzfO9+wDZoRm1O517MLEdfltA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Asadbek_Khasanov\\Desktop\\Reflection\\Task1\\Task1.csproj",
+  "projectFilePath": "C:\\Users\\Asadbek_Khasanov\\Desktop\\epam-dotnet-mentoring\\Reflection\\Task1\\Task1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asadbek_Khasanov\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Asadbek_Khasanov\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asadbek_Khasanov\\Desktop\\Reflection\\Task1\\Task1.csproj": {}
+    "C:\\Users\\Asadbek_Khasanov\\Desktop\\epam-dotnet-mentoring\\Reflection\\Task1\\Task1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asadbek_Khasanov\\Desktop\\Reflection\\Task1\\Task1.csproj": {
+    "C:\\Users\\Asadbek_Khasanov\\Desktop\\epam-dotnet-mentoring\\Reflection\\Task1\\Task1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asadbek_Khasanov\\Desktop\\Reflection\\Task1\\Task1.csproj",
+        "projectUniqueName": "C:\\Users\\Asadbek_Khasanov\\Desktop\\epam-dotnet-mentoring\\Reflection\\Task1\\Task1.csproj",
         "projectName": "Task1",
-        "projectPath": "C:\\Users\\Asadbek_Khasanov\\Desktop\\Reflection\\Task1\\Task1.csproj",
+        "projectPath": "C:\\Users\\Asadbek_Khasanov\\Desktop\\epam-dotnet-mentoring\\Reflection\\Task1\\Task1.csproj",
         "packagesPath": "C:\\Users\\Asadbek_Khasanov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asadbek_Khasanov\\Desktop\\Reflection\\Task1\\obj\\",
+        "outputPath": "C:\\Users\\Asadbek_Khasanov\\Desktop\\epam-dotnet-mentoring\\Reflection\\Task1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Asadbek_Khasanov\\AppData\\Roaming\\NuGet\\NuGet.Config",
