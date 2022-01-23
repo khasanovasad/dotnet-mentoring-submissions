@@ -1,4 +1,4 @@
-## Code examples of .NET Basic Mentoring Program for EPAM Employees
+## .NET Basic Mentoring Program for EPAM Employees
 ### Run from Nov. 24, 2021 - Apr. 08, 2022
 
 ### Modules
