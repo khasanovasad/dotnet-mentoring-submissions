@@ -5,18 +5,6 @@ using Tasks.DoNotChange;
 
 namespace Tasks
 {
-    public class Node<T>
-    {
-        public T Value { get; set; }
-        public Node<T> Next { get; set; }
-        public Node<T> Prev { get; set; }
-
-        public Node(T value)
-        {
-            Value = value;
-        }
-    }
-    
     public class DoublyLinkedList<T> : IDoublyLinkedList<T>
     {
         private Node<T> _head;
@@ -107,12 +95,7 @@ namespace Tasks
 
         public IEnumerator<T> GetEnumerator()
         {
-            var currentNode = _head;
-            while (currentNode != null)
-            {
-                yield return currentNode.Value;
-                currentNode = currentNode.Next;
-            }
+            return new CustomEnumerator<T>(this);
         }
 
         public void Remove(T toBeFound)
@@ -217,7 +200,7 @@ namespace Tasks
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return this.GetEnumerator();
+            return (IEnumerator) GetEnumerator();
         }
     }
 }
