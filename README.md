@@ -1,4 +1,4 @@
-## Module name: .NET Basic Mentoring Program for EPAM Employees
+Submissions for .NET Basic Mentoring Program for EPAM Employees
 ### Run from Nov. 24, 2021 - Apr. 08, 2022
 
 ### Modules
