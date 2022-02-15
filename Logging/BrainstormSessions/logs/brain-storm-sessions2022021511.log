@@ -1,0 +1,592 @@
+2022-02-15 11:28:56.810 +05:00 [DBG] Hosting starting
+2022-02-15 11:28:57.026 +05:00 [INF] User profile is available. Using 'C:\Users\Asadbek_Khasanov\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-15 11:28:57.056 +05:00 [DBG] Reading data from file 'C:\Users\Asadbek_Khasanov\AppData\Local\ASP.NET\DataProtection-Keys\key-57715821-e3bd-43f0-9884-2d24a7c5f84e.xml'.
+2022-02-15 11:28:57.080 +05:00 [DBG] Reading data from file 'C:\Users\Asadbek_Khasanov\AppData\Local\ASP.NET\DataProtection-Keys\key-eb93518d-dd70-43a6-a18f-2f1c93ff5fc0.xml'.
+2022-02-15 11:28:57.098 +05:00 [DBG] Found key {57715821-e3bd-43f0-9884-2d24a7c5f84e}.
+2022-02-15 11:28:57.107 +05:00 [DBG] Found key {eb93518d-dd70-43a6-a18f-2f1c93ff5fc0}.
+2022-02-15 11:28:57.128 +05:00 [DBG] Considering key {57715821-e3bd-43f0-9884-2d24a7c5f84e} with expiration date 2022-05-16 05:50:40Z as default key.
+2022-02-15 11:28:57.145 +05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=3.1.22.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2022-02-15 11:28:57.152 +05:00 [DBG] Decrypting secret element using Windows DPAPI.
+2022-02-15 11:28:57.157 +05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.1.22.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2022-02-15 11:28:57.167 +05:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2022-02-15 11:28:57.177 +05:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2022-02-15 11:28:57.183 +05:00 [DBG] Using key {57715821-e3bd-43f0-9884-2d24a7c5f84e} as the default key.
+2022-02-15 11:28:57.187 +05:00 [DBG] Key ring with default key {57715821-e3bd-43f0-9884-2d24a7c5f84e} was loaded during application startup.
+2022-02-15 11:28:57.324 +05:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2022-02-15 11:28:58.036 +05:00 [DBG] The property 'BrainstormSessionId' on entity type 'Idea' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-02-15 11:28:58.062 +05:00 [INF] Entity Framework Core 3.0.1 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=InMemoryDb 
+2022-02-15 11:28:58.517 +05:00 [DBG] (queryContext) => new QueryingEnumerable<BrainstormSession>(
+    queryContext, 
+    Select<ValueBuffer, ValueBuffer>(
+        source: OrderByDescending<ValueBuffer, DateTimeOffset>(
+            source: Table(
+                queryContext: queryContext, 
+                entityType: EntityType: BrainstormSession), 
+            keySelector: (valueBuffer) => TryReadValue<DateTimeOffset>(valueBuffer, 1, Property: BrainstormSession.DateCreated (DateTimeOffset) Required)), 
+        selector: (valueBuffer) => new ValueBuffer(new object[]
+        { 
+            (object)TryReadValue<int>(valueBuffer, 0, Property: BrainstormSession.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd), 
+            (object)TryReadValue<DateTimeOffset>(valueBuffer, 1, Property: BrainstormSession.DateCreated (DateTimeOffset) Required), 
+            TryReadValue<string>(valueBuffer, 2, Property: BrainstormSession.Name (string)), 
+            Select<ValueBuffer, ValueBuffer>(
+                source: Where<ValueBuffer>(
+                    source: Table(
+                        queryContext: queryContext, 
+                        entityType: EntityType: Idea), 
+                    predicate: (valueBuffer) => (Nullable<int>)TryReadValue<int>(valueBuffer, 0, Property: BrainstormSession.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd) == TryReadValue<Nullable<int>>(valueBuffer, 1, Property: Idea.BrainstormSessionId (no field, Nullable<int>) Shadow FK Index)), 
+                selector: (valueBuffer) => new ValueBuffer(new object[]
+                { 
+                    (object)TryReadValue<int>(valueBuffer, 0, Property: Idea.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd), 
+                    (object)TryReadValue<Nullable<int>>(valueBuffer, 1, Property: Idea.BrainstormSessionId (no field, Nullable<int>) Shadow FK Index), 
+                    (object)TryReadValue<DateTimeOffset>(valueBuffer, 2, Property: Idea.DateCreated (DateTimeOffset) Required), 
+                    TryReadValue<string>(valueBuffer, 3, Property: Idea.Description (string)), 
+                    TryReadValue<string>(valueBuffer, 4, Property: Idea.Name (string)) 
+                })) 
+        })), 
+    Func<QueryContext, ValueBuffer, BrainstormSession>, 
+    BrainstormSessions.Infrastructure.AppDbContext, 
+    DiagnosticsLogger<Query>
+)
+2022-02-15 11:28:58.654 +05:00 [DBG] 'AppDbContext' generated a value for the 'Id' property of new 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:28:58.760 +05:00 [DBG] Context 'AppDbContext' started tracking 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:28:58.786 +05:00 [DBG] 'AppDbContext' generated a value for the 'Id' property of new 'Idea' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:28:58.810 +05:00 [DBG] Context 'AppDbContext' started tracking 'Idea' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:28:58.816 +05:00 [DBG] SaveChanges starting for 'AppDbContext'.
+2022-02-15 11:28:58.822 +05:00 [DBG] DetectChanges starting for 'AppDbContext'.
+2022-02-15 11:28:58.845 +05:00 [DBG] DetectChanges completed for 'AppDbContext'.
+2022-02-15 11:28:58.877 +05:00 [INF] Saved 2 entities to in-memory store.
+2022-02-15 11:28:58.897 +05:00 [DBG] An 'BrainstormSession' entity tracked by 'AppDbContext' changed from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:28:58.901 +05:00 [DBG] An 'Idea' entity tracked by 'AppDbContext' changed from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:28:58.913 +05:00 [DBG] SaveChanges completed for 'AppDbContext' with 2 entities written to the database.
+2022-02-15 11:28:58.986 +05:00 [DBG] 'AppDbContext' disposed.
+2022-02-15 11:28:59.002 +05:00 [DBG] Failed to locate the development https certificate at 'null'.
+2022-02-15 11:28:59.056 +05:00 [DBG] Using development certificate: CN=localhost (Thumbprint: F30C45F56A25FC1F3D40D182513413AC59321EF7)
+2022-02-15 11:28:59.104 +05:00 [INF] Now listening on: https://localhost:5001
+2022-02-15 11:28:59.107 +05:00 [INF] Now listening on: http://localhost:5000
+2022-02-15 11:28:59.110 +05:00 [DBG] Loaded hosting startup assembly BrainstormSessions
+2022-02-15 11:28:59.114 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-02-15 11:28:59.116 +05:00 [INF] Hosting environment: Development
+2022-02-15 11:28:59.118 +05:00 [INF] Content root path: C:\Users\Asadbek_Khasanov\Desktop\dotnet-mentoring-submissions\Logging\BrainstormSessions
+2022-02-15 11:28:59.119 +05:00 [DBG] Hosting started
+2022-02-15 11:28:59.312 +05:00 [DBG] Connection id "0HMFG9HPLKHJF" received FIN.
+2022-02-15 11:28:59.340 +05:00 [DBG] Connection id "0HMFG9HPLKHJF" accepted.
+2022-02-15 11:28:59.345 +05:00 [DBG] Connection id "0HMFG9HPLKHJF" started.
+2022-02-15 11:28:59.374 +05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2022-02-15 11:28:59.428 +05:00 [DBG] Connection id "0HMFG9HPLKHJF" stopped.
+2022-02-15 11:28:59.435 +05:00 [DBG] Connection id "0HMFG9HPLKHJF" sending FIN because: "The Socket transport's send loop completed gracefully."
+2022-02-15 11:28:59.598 +05:00 [DBG] Connection id "0HMFG9HPLKHJG" accepted.
+2022-02-15 11:28:59.602 +05:00 [DBG] Connection id "0HMFG9HPLKHJG" started.
+2022-02-15 11:28:59.672 +05:00 [DBG] Connection id "0HMFG9HPLKHJH" accepted.
+2022-02-15 11:28:59.672 +05:00 [DBG] Connection id "0HMFG9HPLKHJG" received FIN.
+2022-02-15 11:28:59.675 +05:00 [DBG] Connection id "0HMFG9HPLKHJH" started.
+2022-02-15 11:28:59.695 +05:00 [DBG] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslStream.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslStream.ThrowIfExceptional()
+   at System.Net.Security.SslStream.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2022-02-15 11:28:59.707 +05:00 [DBG] Connection id "0HMFG9HPLKHJG" stopped.
+2022-02-15 11:28:59.710 +05:00 [DBG] Connection id "0HMFG9HPLKHJG" sending FIN because: "The Socket transport's send loop completed gracefully."
+2022-02-15 11:28:59.783 +05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/  
+2022-02-15 11:28:59.787 +05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2022-02-15 11:28:59.790 +05:00 [DBG] The request path / does not match a supported file type
+2022-02-15 11:28:59.844 +05:00 [DBG] 1 candidate(s) found for the request path '/'
+2022-02-15 11:28:59.847 +05:00 [DBG] Endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)' with route pattern '{controller=Home}/{action=Index}/{id?}' is valid for the request path '/'
+2022-02-15 11:28:59.850 +05:00 [DBG] Request matched endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:28:59.852 +05:00 [INF] Executing endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:28:59.870 +05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2022-02-15 11:28:59.903 +05:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BrainstormSessions.Controllers.HomeController (BrainstormSessions).
+2022-02-15 11:28:59.905 +05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-02-15 11:28:59.907 +05:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-15 11:28:59.909 +05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2022-02-15 11:28:59.913 +05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2022-02-15 11:28:59.914 +05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-15 11:28:59.917 +05:00 [DBG] Executing controller factory for controller BrainstormSessions.Controllers.HomeController (BrainstormSessions)
+2022-02-15 11:28:59.919 +05:00 [DBG] Executed controller factory for controller BrainstormSessions.Controllers.HomeController (BrainstormSessions)
+2022-02-15 11:28:59.952 +05:00 [INF] Entity Framework Core 3.0.1 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=InMemoryDb 
+2022-02-15 11:28:59.984 +05:00 [DBG] Context 'AppDbContext' started tracking 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:28:59.994 +05:00 [DBG] Context 'AppDbContext' started tracking 'Idea' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:28:59.997 +05:00 [INF] Expected info log
+2022-02-15 11:29:00.003 +05:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Index.cshtml'.
+2022-02-15 11:29:00.006 +05:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Session/Index.cshtml'.
+2022-02-15 11:29:00.007 +05:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_Layout.cshtml'.
+2022-02-15 11:29:00.009 +05:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_ViewImports.cshtml'.
+2022-02-15 11:29:00.017 +05:00 [DBG] View lookup cache miss for view 'Index' in controller 'Home'.
+2022-02-15 11:29:00.031 +05:00 [INF] Executing ViewResult, running view Index.
+2022-02-15 11:29:00.043 +05:00 [DBG] The view path '/Views/Home/Index.cshtml' was found in 15.5972ms.
+2022-02-15 11:29:00.197 +05:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-15 11:29:00.214 +05:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Session/Index/1 and 
+2022-02-15 11:29:00.220 +05:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Session/Index/1
+2022-02-15 11:29:00.227 +05:00 [DBG] View lookup cache miss for view '_Layout' in controller 'Home'.
+2022-02-15 11:29:00.334 +05:00 [INF] Executed ViewResult - view Index executed in 317.3481ms.
+2022-02-15 11:29:00.340 +05:00 [INF] Executed action BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions) in 423.7833ms
+2022-02-15 11:29:00.343 +05:00 [INF] Executed endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:00.350 +05:00 [DBG] 'AppDbContext' disposed.
+2022-02-15 11:29:00.352 +05:00 [INF] Request finished in 574.4289ms 200 text/html; charset=utf-8
+2022-02-15 11:29:00.406 +05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/js/jquery-2.2.0.js  
+2022-02-15 11:29:00.406 +05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/js/knockout.mapping.js  
+2022-02-15 11:29:00.406 +05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/css/bootstrap.css  
+2022-02-15 11:29:00.406 +05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/js/knockout-3.4.2.js  
+2022-02-15 11:29:00.406 +05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/js/bootstrap.js  
+2022-02-15 11:29:00.481 +05:00 [INF] Sending file. Request path: '/css/bootstrap.css'. Physical path: 'C:\Users\Asadbek_Khasanov\Desktop\dotnet-mentoring-submissions\Logging\BrainstormSessions\wwwroot\css\bootstrap.css'
+2022-02-15 11:29:00.481 +05:00 [INF] Sending file. Request path: '/js/bootstrap.js'. Physical path: 'C:\Users\Asadbek_Khasanov\Desktop\dotnet-mentoring-submissions\Logging\BrainstormSessions\wwwroot\js\bootstrap.js'
+2022-02-15 11:29:00.481 +05:00 [INF] Sending file. Request path: '/js/knockout.mapping.js'. Physical path: 'C:\Users\Asadbek_Khasanov\Desktop\dotnet-mentoring-submissions\Logging\BrainstormSessions\wwwroot\js\knockout.mapping.js'
+2022-02-15 11:29:00.481 +05:00 [INF] Sending file. Request path: '/js/knockout-3.4.2.js'. Physical path: 'C:\Users\Asadbek_Khasanov\Desktop\dotnet-mentoring-submissions\Logging\BrainstormSessions\wwwroot\js\knockout-3.4.2.js'
+2022-02-15 11:29:00.485 +05:00 [INF] Sending file. Request path: '/js/jquery-2.2.0.js'. Physical path: 'C:\Users\Asadbek_Khasanov\Desktop\dotnet-mentoring-submissions\Logging\BrainstormSessions\wwwroot\js\jquery-2.2.0.js'
+2022-02-15 11:29:00.488 +05:00 [INF] Request finished in 81.3756ms 200 text/css
+2022-02-15 11:29:00.488 +05:00 [INF] Request finished in 82.0716ms 200 application/javascript
+2022-02-15 11:29:00.491 +05:00 [INF] Request finished in 84.9746ms 200 application/javascript
+2022-02-15 11:29:00.494 +05:00 [INF] Request finished in 87.3721ms 200 application/javascript
+2022-02-15 11:29:00.496 +05:00 [INF] Request finished in 90.0853ms 200 application/javascript
+2022-02-15 11:29:00.573 +05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/favicon.ico  
+2022-02-15 11:29:00.575 +05:00 [DBG] The request path /favicon.ico does not match an existing file
+2022-02-15 11:29:00.580 +05:00 [DBG] No candidates found for the request path '/favicon.ico'
+2022-02-15 11:29:00.583 +05:00 [DBG] Request did not match any endpoints
+2022-02-15 11:29:00.585 +05:00 [INF] Request finished in 11.2434ms 404 
+2022-02-15 11:29:05.717 +05:00 [INF] Request starting HTTP/2 POST https://localhost:5001/ application/x-www-form-urlencoded 36
+2022-02-15 11:29:05.721 +05:00 [DBG] POST requests are not supported
+2022-02-15 11:29:05.724 +05:00 [DBG] 2 candidate(s) found for the request path '/'
+2022-02-15 11:29:05.730 +05:00 [DBG] Endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)' with route pattern '{controller=Home}/{action=Index}/{id?}' is valid for the request path '/'
+2022-02-15 11:29:05.734 +05:00 [DBG] Endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)' with route pattern '{controller=Home}/{action=Index}/{id?}' is valid for the request path '/'
+2022-02-15 11:29:05.736 +05:00 [DBG] Request matched endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:05.737 +05:00 [INF] Executing endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:05.763 +05:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(NewSessionModel) on controller BrainstormSessions.Controllers.HomeController (BrainstormSessions).
+2022-02-15 11:29:05.769 +05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-02-15 11:29:05.770 +05:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-15 11:29:05.771 +05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2022-02-15 11:29:05.778 +05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2022-02-15 11:29:05.780 +05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-15 11:29:05.783 +05:00 [DBG] Executing controller factory for controller BrainstormSessions.Controllers.HomeController (BrainstormSessions)
+2022-02-15 11:29:05.787 +05:00 [DBG] Executed controller factory for controller BrainstormSessions.Controllers.HomeController (BrainstormSessions)
+2022-02-15 11:29:05.797 +05:00 [DBG] Connection id "0HMFG9HPLKHJH", Request id "0HMFG9HPLKHJH:0000000F": started reading request body.
+2022-02-15 11:29:05.800 +05:00 [DBG] Connection id "0HMFG9HPLKHJH", Request id "0HMFG9HPLKHJH:0000000F": done reading request body.
+2022-02-15 11:29:05.814 +05:00 [DBG] Attempting to bind parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel' ...
+2022-02-15 11:29:05.822 +05:00 [DBG] Attempting to bind parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel' using the name '' in request data ...
+2022-02-15 11:29:05.831 +05:00 [DBG] Attempting to bind property 'BrainstormSessions.Controllers.HomeController+NewSessionModel.SessionName' of type 'System.String' using the name 'SessionName' in request data ...
+2022-02-15 11:29:05.834 +05:00 [DBG] Done attempting to bind property 'BrainstormSessions.Controllers.HomeController+NewSessionModel.SessionName' of type 'System.String'.
+2022-02-15 11:29:05.842 +05:00 [DBG] Done attempting to bind parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel'.
+2022-02-15 11:29:05.846 +05:00 [DBG] Done attempting to bind parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel'.
+2022-02-15 11:29:05.847 +05:00 [DBG] Attempting to validate the bound parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel' ...
+2022-02-15 11:29:05.857 +05:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel'.
+2022-02-15 11:29:05.869 +05:00 [INF] Entity Framework Core 3.0.1 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=InMemoryDb 
+2022-02-15 11:29:05.874 +05:00 [DBG] 'AppDbContext' generated a value for the 'Id' property of new 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:05.878 +05:00 [DBG] Context 'AppDbContext' started tracking 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:05.880 +05:00 [DBG] SaveChanges starting for 'AppDbContext'.
+2022-02-15 11:29:05.884 +05:00 [DBG] DetectChanges starting for 'AppDbContext'.
+2022-02-15 11:29:05.885 +05:00 [DBG] DetectChanges completed for 'AppDbContext'.
+2022-02-15 11:29:05.887 +05:00 [INF] Saved 1 entities to in-memory store.
+2022-02-15 11:29:05.888 +05:00 [DBG] An 'BrainstormSession' entity tracked by 'AppDbContext' changed from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:05.890 +05:00 [DBG] SaveChanges completed for 'AppDbContext' with 1 entities written to the database.
+2022-02-15 11:29:05.892 +05:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-15 11:29:05.894 +05:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in  and 
+2022-02-15 11:29:05.896 +05:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /
+2022-02-15 11:29:05.898 +05:00 [INF] Executing RedirectResult, redirecting to /.
+2022-02-15 11:29:05.899 +05:00 [INF] Executed action BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions) in 115.6948ms
+2022-02-15 11:29:05.903 +05:00 [INF] Executed endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:05.905 +05:00 [DBG] 'AppDbContext' disposed.
+2022-02-15 11:29:05.907 +05:00 [INF] Request finished in 189.6423ms 302 
+2022-02-15 11:29:05.910 +05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/  
+2022-02-15 11:29:05.911 +05:00 [DBG] The request path / does not match a supported file type
+2022-02-15 11:29:05.913 +05:00 [DBG] 1 candidate(s) found for the request path '/'
+2022-02-15 11:29:05.914 +05:00 [DBG] Endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)' with route pattern '{controller=Home}/{action=Index}/{id?}' is valid for the request path '/'
+2022-02-15 11:29:05.918 +05:00 [DBG] Request matched endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:05.919 +05:00 [INF] Executing endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:05.921 +05:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BrainstormSessions.Controllers.HomeController (BrainstormSessions).
+2022-02-15 11:29:05.923 +05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-02-15 11:29:05.925 +05:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-15 11:29:05.927 +05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2022-02-15 11:29:05.929 +05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2022-02-15 11:29:05.931 +05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-15 11:29:05.936 +05:00 [DBG] Executing controller factory for controller BrainstormSessions.Controllers.HomeController (BrainstormSessions)
+2022-02-15 11:29:05.937 +05:00 [DBG] Executed controller factory for controller BrainstormSessions.Controllers.HomeController (BrainstormSessions)
+2022-02-15 11:29:05.939 +05:00 [INF] Entity Framework Core 3.0.1 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=InMemoryDb 
+2022-02-15 11:29:05.943 +05:00 [DBG] Context 'AppDbContext' started tracking 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:05.946 +05:00 [DBG] Context 'AppDbContext' started tracking 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:05.947 +05:00 [DBG] Context 'AppDbContext' started tracking 'Idea' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:05.951 +05:00 [INF] Expected info log
+2022-02-15 11:29:05.952 +05:00 [DBG] View lookup cache hit for view 'Index' in controller 'Home'.
+2022-02-15 11:29:05.954 +05:00 [INF] Executing ViewResult, running view Index.
+2022-02-15 11:29:05.955 +05:00 [DBG] The view path '/Views/Home/Index.cshtml' was found in 2.4069ms.
+2022-02-15 11:29:05.961 +05:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-15 11:29:05.963 +05:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Session/Index/2 and 
+2022-02-15 11:29:05.967 +05:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Session/Index/2
+2022-02-15 11:29:05.970 +05:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-15 11:29:05.971 +05:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Session/Index/1 and 
+2022-02-15 11:29:05.973 +05:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Session/Index/1
+2022-02-15 11:29:05.976 +05:00 [DBG] View lookup cache hit for view '_Layout' in controller 'Home'.
+2022-02-15 11:29:05.980 +05:00 [INF] Executed ViewResult - view Index executed in 27.9179ms.
+2022-02-15 11:29:05.984 +05:00 [INF] Executed action BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions) in 48.3154ms
+2022-02-15 11:29:05.986 +05:00 [INF] Executed endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:05.987 +05:00 [DBG] 'AppDbContext' disposed.
+2022-02-15 11:29:05.989 +05:00 [INF] Request finished in 78.5489ms 200 text/html; charset=utf-8
+2022-02-15 11:29:07.854 +05:00 [INF] Request starting HTTP/2 POST https://localhost:5001/ application/x-www-form-urlencoded 34
+2022-02-15 11:29:07.858 +05:00 [DBG] POST requests are not supported
+2022-02-15 11:29:07.862 +05:00 [DBG] 2 candidate(s) found for the request path '/'
+2022-02-15 11:29:07.867 +05:00 [DBG] Endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)' with route pattern '{controller=Home}/{action=Index}/{id?}' is valid for the request path '/'
+2022-02-15 11:29:07.870 +05:00 [DBG] Endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)' with route pattern '{controller=Home}/{action=Index}/{id?}' is valid for the request path '/'
+2022-02-15 11:29:07.872 +05:00 [DBG] Request matched endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:07.874 +05:00 [INF] Executing endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:07.876 +05:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(NewSessionModel) on controller BrainstormSessions.Controllers.HomeController (BrainstormSessions).
+2022-02-15 11:29:07.879 +05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-02-15 11:29:07.883 +05:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-15 11:29:07.886 +05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2022-02-15 11:29:07.888 +05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2022-02-15 11:29:07.890 +05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-15 11:29:07.893 +05:00 [DBG] Executing controller factory for controller BrainstormSessions.Controllers.HomeController (BrainstormSessions)
+2022-02-15 11:29:07.899 +05:00 [DBG] Executed controller factory for controller BrainstormSessions.Controllers.HomeController (BrainstormSessions)
+2022-02-15 11:29:07.901 +05:00 [DBG] Connection id "0HMFG9HPLKHJH", Request id "0HMFG9HPLKHJH:00000013": started reading request body.
+2022-02-15 11:29:07.902 +05:00 [DBG] Connection id "0HMFG9HPLKHJH", Request id "0HMFG9HPLKHJH:00000013": done reading request body.
+2022-02-15 11:29:07.904 +05:00 [DBG] Attempting to bind parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel' ...
+2022-02-15 11:29:07.906 +05:00 [DBG] Attempting to bind parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel' using the name '' in request data ...
+2022-02-15 11:29:07.908 +05:00 [DBG] Attempting to bind property 'BrainstormSessions.Controllers.HomeController+NewSessionModel.SessionName' of type 'System.String' using the name 'SessionName' in request data ...
+2022-02-15 11:29:07.914 +05:00 [DBG] Done attempting to bind property 'BrainstormSessions.Controllers.HomeController+NewSessionModel.SessionName' of type 'System.String'.
+2022-02-15 11:29:07.916 +05:00 [DBG] Done attempting to bind parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel'.
+2022-02-15 11:29:07.918 +05:00 [DBG] Done attempting to bind parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel'.
+2022-02-15 11:29:07.919 +05:00 [DBG] Attempting to validate the bound parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel' ...
+2022-02-15 11:29:07.920 +05:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel'.
+2022-02-15 11:29:07.923 +05:00 [INF] Entity Framework Core 3.0.1 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=InMemoryDb 
+2022-02-15 11:29:07.925 +05:00 [DBG] 'AppDbContext' generated a value for the 'Id' property of new 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:07.930 +05:00 [DBG] Context 'AppDbContext' started tracking 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:07.931 +05:00 [DBG] SaveChanges starting for 'AppDbContext'.
+2022-02-15 11:29:07.932 +05:00 [DBG] DetectChanges starting for 'AppDbContext'.
+2022-02-15 11:29:07.933 +05:00 [DBG] DetectChanges completed for 'AppDbContext'.
+2022-02-15 11:29:07.934 +05:00 [INF] Saved 1 entities to in-memory store.
+2022-02-15 11:29:07.935 +05:00 [DBG] An 'BrainstormSession' entity tracked by 'AppDbContext' changed from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:07.937 +05:00 [DBG] SaveChanges completed for 'AppDbContext' with 1 entities written to the database.
+2022-02-15 11:29:07.938 +05:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-15 11:29:07.940 +05:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in  and 
+2022-02-15 11:29:07.945 +05:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /
+2022-02-15 11:29:07.946 +05:00 [INF] Executing RedirectResult, redirecting to /.
+2022-02-15 11:29:07.948 +05:00 [INF] Executed action BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions) in 54.9627ms
+2022-02-15 11:29:07.949 +05:00 [INF] Executed endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:07.950 +05:00 [DBG] 'AppDbContext' disposed.
+2022-02-15 11:29:07.952 +05:00 [INF] Request finished in 97.9291ms 302 
+2022-02-15 11:29:07.954 +05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/  
+2022-02-15 11:29:07.955 +05:00 [DBG] The request path / does not match a supported file type
+2022-02-15 11:29:07.959 +05:00 [DBG] 1 candidate(s) found for the request path '/'
+2022-02-15 11:29:07.960 +05:00 [DBG] Endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)' with route pattern '{controller=Home}/{action=Index}/{id?}' is valid for the request path '/'
+2022-02-15 11:29:07.962 +05:00 [DBG] Request matched endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:07.963 +05:00 [INF] Executing endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:07.964 +05:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BrainstormSessions.Controllers.HomeController (BrainstormSessions).
+2022-02-15 11:29:07.966 +05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-02-15 11:29:07.967 +05:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-15 11:29:07.969 +05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2022-02-15 11:29:07.971 +05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2022-02-15 11:29:07.977 +05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-15 11:29:07.978 +05:00 [DBG] Executing controller factory for controller BrainstormSessions.Controllers.HomeController (BrainstormSessions)
+2022-02-15 11:29:07.980 +05:00 [DBG] Executed controller factory for controller BrainstormSessions.Controllers.HomeController (BrainstormSessions)
+2022-02-15 11:29:07.981 +05:00 [INF] Entity Framework Core 3.0.1 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=InMemoryDb 
+2022-02-15 11:29:07.984 +05:00 [DBG] Context 'AppDbContext' started tracking 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:07.985 +05:00 [DBG] Context 'AppDbContext' started tracking 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:07.986 +05:00 [DBG] Context 'AppDbContext' started tracking 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:07.988 +05:00 [DBG] Context 'AppDbContext' started tracking 'Idea' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:07.992 +05:00 [INF] Expected info log
+2022-02-15 11:29:07.993 +05:00 [DBG] View lookup cache hit for view 'Index' in controller 'Home'.
+2022-02-15 11:29:07.995 +05:00 [INF] Executing ViewResult, running view Index.
+2022-02-15 11:29:07.996 +05:00 [DBG] The view path '/Views/Home/Index.cshtml' was found in 2.3408ms.
+2022-02-15 11:29:07.998 +05:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-15 11:29:08.000 +05:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Session/Index/3 and 
+2022-02-15 11:29:08.001 +05:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Session/Index/3
+2022-02-15 11:29:08.003 +05:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-15 11:29:08.004 +05:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Session/Index/2 and 
+2022-02-15 11:29:08.010 +05:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Session/Index/2
+2022-02-15 11:29:08.011 +05:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-15 11:29:08.013 +05:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Session/Index/1 and 
+2022-02-15 11:29:08.014 +05:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Session/Index/1
+2022-02-15 11:29:08.016 +05:00 [DBG] View lookup cache hit for view '_Layout' in controller 'Home'.
+2022-02-15 11:29:08.018 +05:00 [INF] Executed ViewResult - view Index executed in 24.6621ms.
+2022-02-15 11:29:08.023 +05:00 [INF] Executed action BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions) in 45.0686ms
+2022-02-15 11:29:08.026 +05:00 [INF] Executed endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:08.028 +05:00 [DBG] 'AppDbContext' disposed.
+2022-02-15 11:29:08.030 +05:00 [INF] Request finished in 75.3605ms 200 text/html; charset=utf-8
+2022-02-15 11:29:09.893 +05:00 [INF] Request starting HTTP/2 POST https://localhost:5001/ application/x-www-form-urlencoded 34
+2022-02-15 11:29:09.895 +05:00 [DBG] POST requests are not supported
+2022-02-15 11:29:09.898 +05:00 [DBG] 2 candidate(s) found for the request path '/'
+2022-02-15 11:29:09.901 +05:00 [DBG] Endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)' with route pattern '{controller=Home}/{action=Index}/{id?}' is valid for the request path '/'
+2022-02-15 11:29:09.906 +05:00 [DBG] Endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)' with route pattern '{controller=Home}/{action=Index}/{id?}' is valid for the request path '/'
+2022-02-15 11:29:09.912 +05:00 [DBG] Request matched endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:09.913 +05:00 [INF] Executing endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:09.915 +05:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(NewSessionModel) on controller BrainstormSessions.Controllers.HomeController (BrainstormSessions).
+2022-02-15 11:29:09.917 +05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-02-15 11:29:09.919 +05:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-15 11:29:09.920 +05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2022-02-15 11:29:09.922 +05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2022-02-15 11:29:09.927 +05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-15 11:29:09.930 +05:00 [DBG] Executing controller factory for controller BrainstormSessions.Controllers.HomeController (BrainstormSessions)
+2022-02-15 11:29:09.934 +05:00 [DBG] Executed controller factory for controller BrainstormSessions.Controllers.HomeController (BrainstormSessions)
+2022-02-15 11:29:09.936 +05:00 [DBG] Connection id "0HMFG9HPLKHJH", Request id "0HMFG9HPLKHJH:00000017": started reading request body.
+2022-02-15 11:29:09.941 +05:00 [DBG] Connection id "0HMFG9HPLKHJH", Request id "0HMFG9HPLKHJH:00000017": done reading request body.
+2022-02-15 11:29:09.944 +05:00 [DBG] Attempting to bind parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel' ...
+2022-02-15 11:29:09.946 +05:00 [DBG] Attempting to bind parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel' using the name '' in request data ...
+2022-02-15 11:29:09.948 +05:00 [DBG] Attempting to bind property 'BrainstormSessions.Controllers.HomeController+NewSessionModel.SessionName' of type 'System.String' using the name 'SessionName' in request data ...
+2022-02-15 11:29:09.949 +05:00 [DBG] Done attempting to bind property 'BrainstormSessions.Controllers.HomeController+NewSessionModel.SessionName' of type 'System.String'.
+2022-02-15 11:29:09.951 +05:00 [DBG] Done attempting to bind parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel'.
+2022-02-15 11:29:09.953 +05:00 [DBG] Done attempting to bind parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel'.
+2022-02-15 11:29:09.955 +05:00 [DBG] Attempting to validate the bound parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel' ...
+2022-02-15 11:29:09.956 +05:00 [DBG] Done attempting to validate the bound parameter 'model' of type 'BrainstormSessions.Controllers.HomeController+NewSessionModel'.
+2022-02-15 11:29:09.961 +05:00 [INF] Entity Framework Core 3.0.1 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=InMemoryDb 
+2022-02-15 11:29:09.965 +05:00 [DBG] 'AppDbContext' generated a value for the 'Id' property of new 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:09.967 +05:00 [DBG] Context 'AppDbContext' started tracking 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:09.972 +05:00 [DBG] SaveChanges starting for 'AppDbContext'.
+2022-02-15 11:29:09.973 +05:00 [DBG] DetectChanges starting for 'AppDbContext'.
+2022-02-15 11:29:09.977 +05:00 [DBG] DetectChanges completed for 'AppDbContext'.
+2022-02-15 11:29:09.980 +05:00 [INF] Saved 1 entities to in-memory store.
+2022-02-15 11:29:09.981 +05:00 [DBG] An 'BrainstormSession' entity tracked by 'AppDbContext' changed from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:09.983 +05:00 [DBG] SaveChanges completed for 'AppDbContext' with 1 entities written to the database.
+2022-02-15 11:29:09.988 +05:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-15 11:29:09.990 +05:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in  and 
+2022-02-15 11:29:09.993 +05:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /
+2022-02-15 11:29:09.995 +05:00 [INF] Executing RedirectResult, redirecting to /.
+2022-02-15 11:29:09.996 +05:00 [INF] Executed action BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions) in 66.4111ms
+2022-02-15 11:29:09.998 +05:00 [INF] Executed endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:10.001 +05:00 [DBG] 'AppDbContext' disposed.
+2022-02-15 11:29:10.003 +05:00 [INF] Request finished in 110.3317ms 302 
+2022-02-15 11:29:10.006 +05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/  
+2022-02-15 11:29:10.007 +05:00 [DBG] The request path / does not match a supported file type
+2022-02-15 11:29:10.010 +05:00 [DBG] 1 candidate(s) found for the request path '/'
+2022-02-15 11:29:10.011 +05:00 [DBG] Endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)' with route pattern '{controller=Home}/{action=Index}/{id?}' is valid for the request path '/'
+2022-02-15 11:29:10.013 +05:00 [DBG] Request matched endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:10.014 +05:00 [INF] Executing endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:10.018 +05:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BrainstormSessions.Controllers.HomeController (BrainstormSessions).
+2022-02-15 11:29:10.020 +05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-02-15 11:29:10.022 +05:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-15 11:29:10.024 +05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2022-02-15 11:29:10.027 +05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2022-02-15 11:29:10.028 +05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-15 11:29:10.030 +05:00 [DBG] Executing controller factory for controller BrainstormSessions.Controllers.HomeController (BrainstormSessions)
+2022-02-15 11:29:10.034 +05:00 [DBG] Executed controller factory for controller BrainstormSessions.Controllers.HomeController (BrainstormSessions)
+2022-02-15 11:29:10.036 +05:00 [INF] Entity Framework Core 3.0.1 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=InMemoryDb 
+2022-02-15 11:29:10.038 +05:00 [DBG] Context 'AppDbContext' started tracking 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:10.039 +05:00 [DBG] Context 'AppDbContext' started tracking 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:10.041 +05:00 [DBG] Context 'AppDbContext' started tracking 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:10.043 +05:00 [DBG] Context 'AppDbContext' started tracking 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:10.044 +05:00 [DBG] Context 'AppDbContext' started tracking 'Idea' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:10.046 +05:00 [INF] Expected info log
+2022-02-15 11:29:10.050 +05:00 [DBG] View lookup cache hit for view 'Index' in controller 'Home'.
+2022-02-15 11:29:10.051 +05:00 [INF] Executing ViewResult, running view Index.
+2022-02-15 11:29:10.052 +05:00 [DBG] The view path '/Views/Home/Index.cshtml' was found in 2.3447ms.
+2022-02-15 11:29:10.054 +05:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-15 11:29:10.056 +05:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Session/Index/4 and 
+2022-02-15 11:29:10.057 +05:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Session/Index/4
+2022-02-15 11:29:10.059 +05:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-15 11:29:10.061 +05:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Session/Index/3 and 
+2022-02-15 11:29:10.065 +05:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Session/Index/3
+2022-02-15 11:29:10.066 +05:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-15 11:29:10.067 +05:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Session/Index/2 and 
+2022-02-15 11:29:10.069 +05:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Session/Index/2
+2022-02-15 11:29:10.070 +05:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-15 11:29:10.071 +05:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Session/Index/1 and 
+2022-02-15 11:29:10.073 +05:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Session/Index/1
+2022-02-15 11:29:10.075 +05:00 [DBG] View lookup cache hit for view '_Layout' in controller 'Home'.
+2022-02-15 11:29:10.078 +05:00 [INF] Executed ViewResult - view Index executed in 28.4291ms.
+2022-02-15 11:29:10.080 +05:00 [INF] Executed action BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions) in 50.9141ms
+2022-02-15 11:29:10.082 +05:00 [INF] Executed endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:10.084 +05:00 [DBG] 'AppDbContext' disposed.
+2022-02-15 11:29:10.085 +05:00 [INF] Request finished in 79.37ms 200 text/html; charset=utf-8
+2022-02-15 11:29:26.303 +05:00 [INF] Application is shutting down...
+2022-02-15 11:29:26.306 +05:00 [DBG] Hosting stopping
+2022-02-15 11:29:26.316 +05:00 [DBG] Connection id "0HMFG9HPLKHJH" is closing.
+2022-02-15 11:29:26.320 +05:00 [DBG] Connection id "0HMFG9HPLKHJH" is closed. The last processed stream ID was 25.
+2022-02-15 11:29:26.325 +05:00 [DBG] Connection id "0HMFG9HPLKHJH" received FIN.
+2022-02-15 11:29:26.329 +05:00 [DBG] Connection id "0HMFG9HPLKHJH" stopped.
+2022-02-15 11:29:26.332 +05:00 [DBG] Connection id "0HMFG9HPLKHJH" sending FIN because: "The Socket transport's send loop completed gracefully."
+2022-02-15 11:29:26.336 +05:00 [DBG] Hosting stopped
+2022-02-15 11:29:33.499 +05:00 [ERR] asdasd
+2022-02-15 11:29:33.804 +05:00 [DBG] Hosting starting
+2022-02-15 11:29:33.850 +05:00 [INF] User profile is available. Using 'C:\Users\Asadbek_Khasanov\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-15 11:29:33.871 +05:00 [DBG] Reading data from file 'C:\Users\Asadbek_Khasanov\AppData\Local\ASP.NET\DataProtection-Keys\key-57715821-e3bd-43f0-9884-2d24a7c5f84e.xml'.
+2022-02-15 11:29:33.889 +05:00 [DBG] Reading data from file 'C:\Users\Asadbek_Khasanov\AppData\Local\ASP.NET\DataProtection-Keys\key-eb93518d-dd70-43a6-a18f-2f1c93ff5fc0.xml'.
+2022-02-15 11:29:33.900 +05:00 [DBG] Found key {57715821-e3bd-43f0-9884-2d24a7c5f84e}.
+2022-02-15 11:29:33.908 +05:00 [DBG] Found key {eb93518d-dd70-43a6-a18f-2f1c93ff5fc0}.
+2022-02-15 11:29:33.924 +05:00 [DBG] Considering key {57715821-e3bd-43f0-9884-2d24a7c5f84e} with expiration date 2022-05-16 05:50:40Z as default key.
+2022-02-15 11:29:33.936 +05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=3.1.22.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2022-02-15 11:29:33.943 +05:00 [DBG] Decrypting secret element using Windows DPAPI.
+2022-02-15 11:29:33.947 +05:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=3.1.22.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2022-02-15 11:29:33.955 +05:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2022-02-15 11:29:33.962 +05:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2022-02-15 11:29:33.969 +05:00 [DBG] Using key {57715821-e3bd-43f0-9884-2d24a7c5f84e} as the default key.
+2022-02-15 11:29:33.971 +05:00 [DBG] Key ring with default key {57715821-e3bd-43f0-9884-2d24a7c5f84e} was loaded during application startup.
+2022-02-15 11:29:34.104 +05:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2022-02-15 11:29:34.682 +05:00 [DBG] The property 'BrainstormSessionId' on entity type 'Idea' was created in shadow state because there are no eligible CLR members with a matching name.
+2022-02-15 11:29:34.710 +05:00 [INF] Entity Framework Core 3.0.1 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=InMemoryDb 
+2022-02-15 11:29:35.129 +05:00 [DBG] (queryContext) => new QueryingEnumerable<BrainstormSession>(
+    queryContext, 
+    Select<ValueBuffer, ValueBuffer>(
+        source: OrderByDescending<ValueBuffer, DateTimeOffset>(
+            source: Table(
+                queryContext: queryContext, 
+                entityType: EntityType: BrainstormSession), 
+            keySelector: (valueBuffer) => TryReadValue<DateTimeOffset>(valueBuffer, 1, Property: BrainstormSession.DateCreated (DateTimeOffset) Required)), 
+        selector: (valueBuffer) => new ValueBuffer(new object[]
+        { 
+            (object)TryReadValue<int>(valueBuffer, 0, Property: BrainstormSession.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd), 
+            (object)TryReadValue<DateTimeOffset>(valueBuffer, 1, Property: BrainstormSession.DateCreated (DateTimeOffset) Required), 
+            TryReadValue<string>(valueBuffer, 2, Property: BrainstormSession.Name (string)), 
+            Select<ValueBuffer, ValueBuffer>(
+                source: Where<ValueBuffer>(
+                    source: Table(
+                        queryContext: queryContext, 
+                        entityType: EntityType: Idea), 
+                    predicate: (valueBuffer) => (Nullable<int>)TryReadValue<int>(valueBuffer, 0, Property: BrainstormSession.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd) == TryReadValue<Nullable<int>>(valueBuffer, 1, Property: Idea.BrainstormSessionId (no field, Nullable<int>) Shadow FK Index)), 
+                selector: (valueBuffer) => new ValueBuffer(new object[]
+                { 
+                    (object)TryReadValue<int>(valueBuffer, 0, Property: Idea.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd), 
+                    (object)TryReadValue<Nullable<int>>(valueBuffer, 1, Property: Idea.BrainstormSessionId (no field, Nullable<int>) Shadow FK Index), 
+                    (object)TryReadValue<DateTimeOffset>(valueBuffer, 2, Property: Idea.DateCreated (DateTimeOffset) Required), 
+                    TryReadValue<string>(valueBuffer, 3, Property: Idea.Description (string)), 
+                    TryReadValue<string>(valueBuffer, 4, Property: Idea.Name (string)) 
+                })) 
+        })), 
+    Func<QueryContext, ValueBuffer, BrainstormSession>, 
+    BrainstormSessions.Infrastructure.AppDbContext, 
+    DiagnosticsLogger<Query>
+)
+2022-02-15 11:29:35.269 +05:00 [DBG] 'AppDbContext' generated a value for the 'Id' property of new 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:35.352 +05:00 [DBG] Context 'AppDbContext' started tracking 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:35.379 +05:00 [DBG] 'AppDbContext' generated a value for the 'Id' property of new 'Idea' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:35.406 +05:00 [DBG] Context 'AppDbContext' started tracking 'Idea' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:35.413 +05:00 [DBG] SaveChanges starting for 'AppDbContext'.
+2022-02-15 11:29:35.418 +05:00 [DBG] DetectChanges starting for 'AppDbContext'.
+2022-02-15 11:29:35.439 +05:00 [DBG] DetectChanges completed for 'AppDbContext'.
+2022-02-15 11:29:35.470 +05:00 [INF] Saved 2 entities to in-memory store.
+2022-02-15 11:29:35.488 +05:00 [DBG] An 'BrainstormSession' entity tracked by 'AppDbContext' changed from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:35.494 +05:00 [DBG] An 'Idea' entity tracked by 'AppDbContext' changed from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:35.508 +05:00 [DBG] SaveChanges completed for 'AppDbContext' with 2 entities written to the database.
+2022-02-15 11:29:35.595 +05:00 [DBG] 'AppDbContext' disposed.
+2022-02-15 11:29:35.619 +05:00 [DBG] Failed to locate the development https certificate at 'null'.
+2022-02-15 11:29:35.684 +05:00 [DBG] Using development certificate: CN=localhost (Thumbprint: F30C45F56A25FC1F3D40D182513413AC59321EF7)
+2022-02-15 11:29:35.717 +05:00 [INF] Now listening on: https://localhost:5001
+2022-02-15 11:29:35.720 +05:00 [INF] Now listening on: http://localhost:5000
+2022-02-15 11:29:35.725 +05:00 [DBG] Loaded hosting startup assembly BrainstormSessions
+2022-02-15 11:29:35.729 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-02-15 11:29:35.732 +05:00 [INF] Hosting environment: Development
+2022-02-15 11:29:35.733 +05:00 [INF] Content root path: C:\Users\Asadbek_Khasanov\Desktop\dotnet-mentoring-submissions\Logging\BrainstormSessions
+2022-02-15 11:29:35.734 +05:00 [DBG] Hosting started
+2022-02-15 11:29:36.160 +05:00 [DBG] Connection id "0HMFG9I4L1R8S" received FIN.
+2022-02-15 11:29:36.179 +05:00 [DBG] Connection id "0HMFG9I4L1R8S" accepted.
+2022-02-15 11:29:36.182 +05:00 [DBG] Connection id "0HMFG9I4L1R8S" started.
+2022-02-15 11:29:36.209 +05:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessAuthentication(LazyAsyncResult lazyResult, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2022-02-15 11:29:36.254 +05:00 [DBG] Connection id "0HMFG9I4L1R8S" stopped.
+2022-02-15 11:29:36.263 +05:00 [DBG] Connection id "0HMFG9I4L1R8S" sending FIN because: "The Socket transport's send loop completed gracefully."
+2022-02-15 11:29:36.428 +05:00 [DBG] Connection id "0HMFG9I4L1R8T" accepted.
+2022-02-15 11:29:36.435 +05:00 [DBG] Connection id "0HMFG9I4L1R8T" started.
+2022-02-15 11:29:36.516 +05:00 [DBG] Connection id "0HMFG9I4L1R8U" accepted.
+2022-02-15 11:29:36.516 +05:00 [DBG] Connection id "0HMFG9I4L1R8T" received FIN.
+2022-02-15 11:29:36.518 +05:00 [DBG] Connection id "0HMFG9I4L1R8U" started.
+2022-02-15 11:29:36.534 +05:00 [DBG] Failed to authenticate HTTPS connection.
+System.Security.Authentication.AuthenticationException: Authentication failed, see inner exception.
+ ---> System.ComponentModel.Win32Exception (0x80090327): An unknown error occurred while processing the certificate.
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslStream.StartSendAuthResetSignal(ProtocolToken message, AsyncProtocolRequest asyncRequest, ExceptionDispatchInfo exception)
+   at System.Net.Security.SslStream.CheckCompletionBeforeNextReceive(ProtocolToken message, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartSendBlob(Byte[] incoming, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.ProcessReceivedBlob(Byte[] buffer, Int32 count, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslStream.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslStream.ThrowIfExceptional()
+   at System.Net.Security.SslStream.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__69_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.InnerOnConnectionAsync(ConnectionContext context)
+2022-02-15 11:29:36.547 +05:00 [DBG] Connection id "0HMFG9I4L1R8T" stopped.
+2022-02-15 11:29:36.549 +05:00 [DBG] Connection id "0HMFG9I4L1R8T" sending FIN because: "The Socket transport's send loop completed gracefully."
+2022-02-15 11:29:36.617 +05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/  
+2022-02-15 11:29:36.622 +05:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2022-02-15 11:29:36.626 +05:00 [DBG] The request path / does not match a supported file type
+2022-02-15 11:29:36.675 +05:00 [DBG] 1 candidate(s) found for the request path '/'
+2022-02-15 11:29:36.677 +05:00 [DBG] Endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)' with route pattern '{controller=Home}/{action=Index}/{id?}' is valid for the request path '/'
+2022-02-15 11:29:36.679 +05:00 [DBG] Request matched endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:36.681 +05:00 [INF] Executing endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:36.697 +05:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2022-02-15 11:29:36.729 +05:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller BrainstormSessions.Controllers.HomeController (BrainstormSessions).
+2022-02-15 11:29:36.733 +05:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2022-02-15 11:29:36.735 +05:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-15 11:29:36.736 +05:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2022-02-15 11:29:36.740 +05:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2022-02-15 11:29:36.743 +05:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2022-02-15 11:29:36.746 +05:00 [DBG] Executing controller factory for controller BrainstormSessions.Controllers.HomeController (BrainstormSessions)
+2022-02-15 11:29:36.748 +05:00 [DBG] Executed controller factory for controller BrainstormSessions.Controllers.HomeController (BrainstormSessions)
+2022-02-15 11:29:36.782 +05:00 [INF] Entity Framework Core 3.0.1 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=InMemoryDb 
+2022-02-15 11:29:36.813 +05:00 [DBG] Context 'AppDbContext' started tracking 'BrainstormSession' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:36.824 +05:00 [DBG] Context 'AppDbContext' started tracking 'Idea' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2022-02-15 11:29:36.828 +05:00 [INF] Expected info log
+2022-02-15 11:29:36.838 +05:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Index.cshtml'.
+2022-02-15 11:29:36.840 +05:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Session/Index.cshtml'.
+2022-02-15 11:29:36.841 +05:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_Layout.cshtml'.
+2022-02-15 11:29:36.842 +05:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_ViewImports.cshtml'.
+2022-02-15 11:29:36.850 +05:00 [DBG] View lookup cache miss for view 'Index' in controller 'Home'.
+2022-02-15 11:29:36.857 +05:00 [INF] Executing ViewResult, running view Index.
+2022-02-15 11:29:36.866 +05:00 [DBG] The view path '/Views/Home/Index.cshtml' was found in 8.1564ms.
+2022-02-15 11:29:37.010 +05:00 [DBG] Found the endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2022-02-15 11:29:37.030 +05:00 [DBG] Successfully processed template {controller=Home}/{action=Index}/{id?} for Route: {controller=Home}/{action=Index}/{id?} resulting in /Session/Index/1 and 
+2022-02-15 11:29:37.037 +05:00 [DBG] Link generation succeeded for endpoints ["Route: {controller=Home}/{action=Index}/{id?}"] with result /Session/Index/1
+2022-02-15 11:29:37.046 +05:00 [DBG] View lookup cache miss for view '_Layout' in controller 'Home'.
+2022-02-15 11:29:37.155 +05:00 [INF] Executed ViewResult - view Index executed in 305.1458ms.
+2022-02-15 11:29:37.159 +05:00 [INF] Executed action BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions) in 414.1183ms
+2022-02-15 11:29:37.161 +05:00 [INF] Executed endpoint 'BrainstormSessions.Controllers.HomeController.Index (BrainstormSessions)'
+2022-02-15 11:29:37.170 +05:00 [DBG] 'AppDbContext' disposed.
+2022-02-15 11:29:37.172 +05:00 [INF] Request finished in 560.8536ms 200 text/html; charset=utf-8
+2022-02-15 11:29:37.197 +05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/js/jquery-2.2.0.js  
+2022-02-15 11:29:37.197 +05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/js/bootstrap.js  
+2022-02-15 11:29:37.197 +05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/css/bootstrap.css  
+2022-02-15 11:29:37.197 +05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/js/knockout-3.4.2.js  
+2022-02-15 11:29:37.197 +05:00 [INF] Request starting HTTP/2 GET https://localhost:5001/js/knockout.mapping.js  
+2022-02-15 11:29:37.243 +05:00 [INF] Sending file. Request path: '/js/knockout-3.4.2.js'. Physical path: 'C:\Users\Asadbek_Khasanov\Desktop\dotnet-mentoring-submissions\Logging\BrainstormSessions\wwwroot\js\knockout-3.4.2.js'
+2022-02-15 11:29:37.243 +05:00 [INF] Sending file. Request path: '/js/bootstrap.js'. Physical path: 'C:\Users\Asadbek_Khasanov\Desktop\dotnet-mentoring-submissions\Logging\BrainstormSessions\wwwroot\js\bootstrap.js'
+2022-02-15 11:29:37.243 +05:00 [INF] Sending file. Request path: '/js/knockout.mapping.js'. Physical path: 'C:\Users\Asadbek_Khasanov\Desktop\dotnet-mentoring-submissions\Logging\BrainstormSessions\wwwroot\js\knockout.mapping.js'
+2022-02-15 11:29:37.244 +05:00 [INF] Sending file. Request path: '/css/bootstrap.css'. Physical path: 'C:\Users\Asadbek_Khasanov\Desktop\dotnet-mentoring-submissions\Logging\BrainstormSessions\wwwroot\css\bootstrap.css'
+2022-02-15 11:29:37.247 +05:00 [INF] Sending file. Request path: '/js/jquery-2.2.0.js'. Physical path: 'C:\Users\Asadbek_Khasanov\Desktop\dotnet-mentoring-submissions\Logging\BrainstormSessions\wwwroot\js\jquery-2.2.0.js'
+2022-02-15 11:29:37.248 +05:00 [INF] Request finished in 50.8376ms 200 application/javascript
+2022-02-15 11:29:37.248 +05:00 [INF] Request finished in 51.1347ms 200 application/javascript
+2022-02-15 11:29:37.251 +05:00 [INF] Request finished in 53.8555ms 200 application/javascript
+2022-02-15 11:29:37.253 +05:00 [INF] Request finished in 56.0917ms 200 text/css
+2022-02-15 11:29:37.255 +05:00 [INF] Request finished in 58.1677ms 200 application/javascript
+2022-02-15 11:30:07.381 +05:00 [INF] Application is shutting down...
+2022-02-15 11:30:07.384 +05:00 [DBG] Hosting stopping
+2022-02-15 11:30:07.393 +05:00 [DBG] Connection id "0HMFG9I4L1R8U" is closing.
+2022-02-15 11:30:07.396 +05:00 [DBG] Connection id "0HMFG9I4L1R8U" is closed. The last processed stream ID was 11.
+2022-02-15 11:30:07.402 +05:00 [DBG] Connection id "0HMFG9I4L1R8U" received FIN.
+2022-02-15 11:30:07.405 +05:00 [DBG] Connection id "0HMFG9I4L1R8U" stopped.
+2022-02-15 11:30:07.407 +05:00 [DBG] Connection id "0HMFG9I4L1R8U" sending FIN because: "The Socket transport's send loop completed gracefully."
+2022-02-15 11:30:07.412 +05:00 [DBG] Hosting stopped
