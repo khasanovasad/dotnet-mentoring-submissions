@@ -1,0 +1,10 @@
+{
+  "Isbn": "Isbn1",
+  "Title": "Title1",
+  "Author": "Author1",
+  "NumberOfPages": 100,
+  "OriginalPublisher": "OriginalPublisher1",
+  "CountryOfLocalization": "CountryOfLocalization1",
+  "LocalPublisher": "LocalPublisher1",
+  "DatePublished": "2001-01-01T00:00:00"
+}

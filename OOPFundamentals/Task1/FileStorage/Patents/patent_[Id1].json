@@ -1,0 +1,7 @@
+{
+  "Id": "Id1",
+  "Title": "Title1",
+  "Authors": [ "Author1_1", "Author1_2" ],
+  "DatePublished": "2001-01-01T00:00:00",
+  "ExpirationDate": "2001-01-01T00:00:00"
+}

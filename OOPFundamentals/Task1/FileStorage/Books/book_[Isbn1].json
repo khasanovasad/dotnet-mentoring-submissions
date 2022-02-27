@@ -1,0 +1,8 @@
+{
+  "Isbn": "Isbn1",
+  "Title": "Title1",
+  "Author": "Author1",
+  "NumberOfPages": 100,
+  "Publisher": "Publisher1",
+  "DatePublished": "2001-01-01T00:00:00"
+}
