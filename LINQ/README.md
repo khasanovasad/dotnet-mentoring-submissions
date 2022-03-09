@@ -15,24 +15,16 @@ Queries:
 5. Repeat the previous query but order the result by year, month, turnover (descending) and customer name. 
 
 6. Select the clients which either have:
- <br/>
- &nbsp;a. non-digit postal code
- <br/>
- &nbsp;b. undefined region
- <br/>
- &nbsp;c. operator code in the phone is not specified (does not contain parentheses) 
- <br/>
+<br/>a. non-digit postal code
+<br/>b. undefined region
+<br/>c. operator code in the phone is not specified (does not contain parentheses) 
 
 7. Group the products by category, then by availability in stock with ordering by cost. 
 
 8. Group the products by “cheap”, “average” and “expensive” following the rules:
- <br/>
- &nbsp;a. From 0 to cheap inclusive
- <br/>
- &nbsp;b. From cheap exclusive to average inclusive
- <br/>
- &nbsp;c. From average exclusive to expensive inclusive 
- <br/>
+<br/>a. From 0 to cheap inclusive
+<br/>b. From cheap exclusive to average inclusive
+<br/>c. From average exclusive to expensive inclusive 
 
 9. Calculate the average profitability of each city (average amount of orders per customer) and average rate (average number of orders per customer from each city). 
 
