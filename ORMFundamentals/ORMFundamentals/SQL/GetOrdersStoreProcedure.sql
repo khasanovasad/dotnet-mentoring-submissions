@@ -1,0 +1,5 @@
+﻿CREATE OR ALTER PROC GetOrders
+AS 
+BEGIN
+SELECT * FROM Orders
+END
